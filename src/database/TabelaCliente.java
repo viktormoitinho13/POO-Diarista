@@ -59,7 +59,6 @@ public class TabelaCliente extends Database {
 
         ResultSet resultado = comando.executeQuery();
         if (resultado.first()) {
-            System.out.println("Cod: " + resultado.getInt("id_residencia"));
             c.setEnd_cod(resultado.getInt("id_residencia"));
         }
 

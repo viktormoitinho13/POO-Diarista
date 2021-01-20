@@ -4,13 +4,36 @@ import java.util.ArrayList;
 
 import classes.Cliente;
 import classes.Diarista;
+import classes.Servico;
 import database.TabelaCliente;
 import database.TabelaDiarista;
+import database.TabelaServico;
 
 @SuppressWarnings("unused")
 public class Main {
 
 	public static void main(String[] args) throws Exception {
+		
+		// Operações com o servico
+		TabelaServico db_s = new TabelaServico();
+		ArrayList<Servico> regis;
+		
+		Servico s = new Servico(
+				1, 2,
+				3, "2003-03-03", "2004-04-04", 4, 5.00,
+				6, "Passar rápido", 7,
+				8, 9, 10
+		);
+		db_s.inserir(s);
+		
+		db_s.remover(1);
+		
+		regis = db_s.listar();
+		for (int i = 0; i < regis.size(); i++)
+			db_s.mostraDados(regis.get(i));
+		
+		
+		/*
 		 // Operações com a diarista
 		TabelaDiarista db_d = new TabelaDiarista();
 		ArrayList<Diarista> reg;
@@ -76,7 +99,7 @@ public class Main {
 		for (int i = 0; i < reg.size(); i++)
 			db_d.mostraDados(reg.get(i));
 		System.out.print("\n\n");
-		
+		*/
 		
 		
 		/*
