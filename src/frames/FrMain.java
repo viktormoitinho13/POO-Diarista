@@ -25,7 +25,6 @@ import database.TabelaServico;
 
 import java.awt.Font;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 

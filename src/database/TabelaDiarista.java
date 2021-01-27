@@ -118,7 +118,6 @@ public class TabelaDiarista extends Database{
         
         ArrayList<Diarista> registros = new ArrayList<>();
         
-        int i = 0;
         while (resultado.next()) {
         	registros.add(
     			new Diarista(
