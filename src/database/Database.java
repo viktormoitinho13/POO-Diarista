@@ -9,7 +9,7 @@ public class Database {
     protected static String     user = "root";
     protected static String password = "";
     protected static String     host = "localhost";
-    protected static String     gate = "3308";	// No meu pc é a porta que funciona, mas o padrão é 3306
+    protected static String     gate = "3306";	// No meu pc é a porta que funciona, mas o padrão é 3306
     protected static String database = "proj_diarista";
     
     protected static String      url = "jdbc:mysql://" 

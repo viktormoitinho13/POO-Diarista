@@ -14,6 +14,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		
+		/*
 		// Operações com o servico
 		TabelaServico db_s = new TabelaServico();
 		ArrayList<Servico> regis;
@@ -31,6 +32,7 @@ public class Main {
 		regis = db_s.listar();
 		for (int i = 0; i < regis.size(); i++)
 			db_s.mostraDados(regis.get(i));
+		*/
 		
 		
 		/*
@@ -102,17 +104,15 @@ public class Main {
 		*/
 		
 		
-		/*
-		// Operações com o cliente
-		TabelaCliente  db_c = new TabelaCliente();
-		
-		db_c.remover(5);
-		ArrayList<Cliente> registros = db_c.listar();
-		
-		for (int i = 0; i < registros.size(); i++) {
-			db_c.mostraDados(registros.get(i));
-		}
-		*/
+//		Operações com o cliente
+//		TabelaCliente  db_c = new TabelaCliente();
+//		
+//		db_c.remover(5);
+//		ArrayList<Cliente> registros = db_c.listar();
+//		
+//		for (int i = 0; i < registros.size(); i++) {
+//			db_c.mostraDados(registros.get(i));
+//		}
 	}
 	
 }

@@ -54,11 +54,12 @@ public class TabelaCliente extends Database {
         		+ "complemento = '" + c.getCompl()  + "' and "
         		+ "cep = "          + c.getCep()    + "  and "
         		+ "bairro = '"      + c.getBairro() + "' and "
-        		+ "cidade = '"      + c.getCid()    + "'"
+        		+ "cidade = '"      + c.getCid()    + "' "
+        		+ "order by id_residencia"
         );
 
         ResultSet resultado = comando.executeQuery();
-        if (resultado.first()) {
+        if (resultado.last()) {
             c.setEnd_cod(resultado.getInt("id_residencia"));
         }
 
@@ -107,7 +108,6 @@ public class TabelaCliente extends Database {
         if (resultado.first()) {
             id_res = (resultado.getInt("fk_residencia_id_residencia"));
         }
-        System.out.println(id_res);
         
         
         comando = (PreparedStatement) conn.prepareStatement(
@@ -173,7 +173,7 @@ public class TabelaCliente extends Database {
     					resultado.getString("cep"),
     					resultado.getString("bairro"),
     					resultado.getString("cidade"),
-    					resultado.getInt("tamanho_total"),
+    					resultado.getString("tamanho_total"),
     					resultado.getString("complemento")
         		)
         	);
@@ -196,7 +196,8 @@ public class TabelaCliente extends Database {
         
         PreparedStatement comando = (PreparedStatement) conn.prepareStatement(
         		"select * from cliente c, residencia r "
-        		+ "where id_residencia = fk_residencia_id_residencia " 
+        		+ "where id_residencia = fk_residencia_id_residencia "
+        		+ "order by id_cliente "
         );
         ResultSet resultado = comando.executeQuery();
         
@@ -216,7 +217,7 @@ public class TabelaCliente extends Database {
         					resultado.getString("cep"),
         					resultado.getString("bairro"),
         					resultado.getString("cidade"),
-        					resultado.getInt("tamanho_total"),
+        					resultado.getString("tamanho_total"),
         					resultado.getString("complemento")
         		)
         	);

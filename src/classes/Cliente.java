@@ -15,7 +15,7 @@ public class Cliente {
 	private String cep;
 	private String bairro;
 	private String cid;
-	private int    tam_total;
+	private String tam_total;
 	private String compl;
 	
 	// Inicializa vazia
@@ -33,12 +33,13 @@ public class Cliente {
 		this.cep       = "0";
 		this.bairro    = "Not Null Value";
 		this.cid       = "Not Null Value";
-		this.tam_total = 0;
+		this.tam_total = "0";
 		this.compl     = "";
 	}
 	
 	// Também usada para testes rápidos, mas com complemento
-	public Cliente(String nome, String cpf, String tel, String end, String compl) {
+	public Cliente(String nome, String cpf, String tel, 
+	String end, String cep, String bairro, String cid, String tam_total, String compl) {
 		this.cod       = 0;
 		this.nome      = nome;
 		this.cpf       = cpf;
@@ -46,15 +47,15 @@ public class Cliente {
 		this.end_cod   = 0;
 		
 		this.end       = end;
-		this.cep       = "0";
-		this.bairro    = "Not Null Value";
-		this.cid       = "Not Null Value";
-		this.tam_total = 0;
+		this.cep       = cep;
+		this.bairro    = bairro;
+		this.cid       = cid;
+		this.tam_total = tam_total;
 		this.compl     = compl;
 	}
 	
 	// Preenchimento completo da classe
-	public Cliente(int cod, String nome, String cpf, String tel, int end_cod, String end, String cep, String bairro, String cid, int tam_total, String compl) {
+	public Cliente(int cod, String nome, String cpf, String tel, int end_cod, String end, String cep, String bairro, String cid, String tam_total, String compl) {
 		this.cod       = cod;
 		this.nome      = nome;
 		this.cpf       = cpf;
@@ -153,11 +154,11 @@ public class Cliente {
 		this.cid = cid;
 	}
 
-	public int getTam_total() {
+	public String getTam_total() {
 		return tam_total;
 	}
 
-	public void setTam_total(int tam_total) {
+	public void setTam_total(String tam_total) {
 		this.tam_total = tam_total;
 	}
 

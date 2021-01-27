@@ -112,20 +112,21 @@ public class TabelaDiarista extends Database{
         conn = DriverManager.getConnection(url, user, password);
 
         
-        String SqlCom = "select * from diarista";
+        String SqlCom = "select * from diarista order by num_reg";
         PreparedStatement comando = (PreparedStatement) conn.prepareStatement(SqlCom);
         ResultSet resultado = comando.executeQuery();
         
         ArrayList<Diarista> registros = new ArrayList<>();
         
+        int i = 0;
         while (resultado.next()) {
         	registros.add(
     			new Diarista(
         			Integer.parseInt(resultado.getString("num_reg")),
         			resultado.getString("nome"),
+        			resultado.getString("nascimento"),
         			resultado.getString("cpf_diarista"),
         			resultado.getString("telefone"),
-        			resultado.getString("nascimento"),
         			resultado.getString("endereco")
         		)
         	);

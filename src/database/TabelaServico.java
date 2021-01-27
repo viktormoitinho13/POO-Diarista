@@ -305,5 +305,5 @@ public class TabelaServico extends Database {
         conn = null;
 	}
 	
-//	public void gerarBoleto() throws Exception {}
+//	public Servico gerarBoleto(int posicao) throws Exception {}
 }
